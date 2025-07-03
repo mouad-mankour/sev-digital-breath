@@ -4,7 +4,7 @@ import { UseCases } from "@/components/sev/UseCases";
 import { ContactForm } from "@/components/sev/ContactForm";
 import { Footer } from "@/components/sev/Footer";
 
-const Index = () => {
+export default function SevLanding() {
   return (
     <div className="min-h-screen">
       <HeroSection />
@@ -14,6 +14,4 @@ const Index = () => {
       <Footer />
     </div>
   );
-};
-
-export default Index;
+}

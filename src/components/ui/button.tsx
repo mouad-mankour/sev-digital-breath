@@ -18,6 +18,11 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // SEV variants - Living buttons
+        hero: "bg-gradient-to-r from-primary to-accent text-primary-foreground btn-glow hover:shadow-lg",
+        neural: "bg-accent/10 text-accent border border-accent/30 card-float hover:bg-accent/20",
+        data: "bg-card text-card-foreground border border-primary/20 hover:border-primary/40 transition-all duration-300",
+        mission: "bg-primary/10 text-primary border border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

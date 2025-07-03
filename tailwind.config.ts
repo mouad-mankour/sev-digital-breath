@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -61,7 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// SEV specific colors
+				'data-stream': 'hsl(var(--data-stream))',
+				'neural-purple': 'hsl(var(--neural-purple))',
+				'warm-gold': 'hsl(var(--warm-gold))',
+				'success-green': 'hsl(var(--success-green))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
