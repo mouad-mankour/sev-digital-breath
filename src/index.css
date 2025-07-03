@@ -132,24 +132,24 @@
 
   /* Boutons vivants */
   .btn-glow {
-    box-shadow: var(--glow-primary);
+    box-shadow: var(--glow-primary), 0 20px 40px hsl(var(--primary) / 0.1);
     transition: var(--transition-flow);
   }
 
   .btn-glow:hover {
-    box-shadow: var(--glow-accent);
-    transform: translateY(-2px);
+    box-shadow: var(--glow-accent), 0 25px 50px hsl(var(--accent) / 0.2);
+    transform: translateY(-3px) scale(1.02);
   }
 
   /* Cartes flottantes */
   .card-float {
     transition: var(--transition-flow);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
   }
 
   .card-float:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--glow-accent);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--glow-accent), 0 30px 60px hsl(var(--primary) / 0.15);
   }
 
   /* Lignes de données */

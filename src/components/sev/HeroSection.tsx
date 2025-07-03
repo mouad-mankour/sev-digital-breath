@@ -35,25 +35,25 @@ export function HeroSection() {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         {/* Badge d'introduction */}
-        <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mb-8 animate-pulse">
-          <Sparkles className="w-4 h-4 text-accent" />
-          <span className="text-accent text-sm font-medium">Agent SEV - Intelligence Automatisée</span>
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/40 rounded-full px-6 py-3 mb-8 shadow-lg backdrop-blur-sm">
+          <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+          <span className="text-accent text-sm font-semibold tracking-wide">databblead • Data Intelligence</span>
         </div>
 
         {/* Titre principal */}
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
-          <span className="block">Quand la donnée</span>
+        <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight leading-none">
+          <span className="block text-foreground/95">Transformons vos</span>
           <span className="block hero-gradient bg-clip-text text-transparent animate-gradient">
-            devient évidente
+            données en leads
           </span>
         </h1>
 
         {/* Sous-titre poétique */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-          Donnez-lui un nom, une mission, et notre agent s'en charge.
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+          L'intelligence artificielle au service de votre croissance commerciale.
           <br />
-          <span className="text-primary">Il scrute, il enrichit, il vérifie</span> — 
-          l'allié invisible de vos équipes.
+          <span className="text-primary font-medium">Nous identifions, qualifions et connectons</span> — 
+          vos futurs clients vous attendent.
         </p>
 
         {/* CTA principal */}
@@ -61,18 +61,18 @@ export function HeroSection() {
           <Button 
             variant="hero" 
             size="lg" 
-            className="group text-lg px-8 py-4 h-auto"
+            className="group text-lg px-10 py-5 h-auto shadow-2xl"
           >
-            Voir ce que notre agent peut faire pour vous
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            Découvrir notre approche data-driven
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-all duration-300" />
           </Button>
           
           <Button 
             variant="neural" 
             size="lg" 
-            className="text-lg px-8 py-4 h-auto"
+            className="text-lg px-10 py-5 h-auto backdrop-blur-md"
           >
-            Découvrir SEV en action
+            Voir nos résultats clients
           </Button>
         </div>
 

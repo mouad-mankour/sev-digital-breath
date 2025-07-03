@@ -18,8 +18,8 @@ export function ContactForm() {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     toast({
-      title: "Mission reçue ✨",
-      description: "Votre demande a été transmise à notre équipe. Nous vous recontactons sous 24h.",
+      title: "Stratégie reçue ✨",
+      description: "Votre projet a été transmis à databblead. Nous analysons votre défi et vous recontactons sous 24h.",
     });
 
     setIsSubmitting(false);
@@ -39,105 +39,105 @@ export function ContactForm() {
         <div className="max-w-4xl mx-auto">
           {/* Titre évocateur */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-accent text-sm font-medium">Prêt à confier votre mission ?</span>
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/40 rounded-full px-6 py-3 mb-8 shadow-lg backdrop-blur-sm">
+              <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+              <span className="text-accent text-sm font-semibold tracking-wide">Prêt à transformer vos données ?</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Et vous, quelle mission
-              <span className="text-primary ml-3">allez-vous lui confier ?</span>
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+              Prêt à transformer
+              <span className="text-accent ml-3">vos données en croissance ?</span>
             </h2>
             
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Décrivez votre vision. Notre agent SEV la transformera en réalité.
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Partagez-nous vos défis commerciaux. Nous concevrons une stratégie data sur-mesure.
               <br />
-              <em>Chaque mission est unique, chaque approche sur-mesure.</em>
+              <em className="text-primary">Votre pipeline de demain se construit aujourd'hui.</em>
             </p>
           </div>
 
           {/* Formulaire élégant */}
-          <div className="bg-card/50 backdrop-blur-sm border border-border rounded-3xl p-8 md:p-12 card-float">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-gradient-to-br from-card to-card/80 backdrop-blur-md border border-primary/30 rounded-3xl p-10 md:p-16 card-float shadow-2xl">
+            <form onSubmit={handleSubmit} className="space-y-8">
               {/* Informations de contact */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-foreground font-medium">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <Label htmlFor="name" className="text-foreground font-semibold text-base">
                     Votre nom
                   </Label>
                   <Input
                     id="name"
                     name="name"
                     required
-                    className="bg-background/50 border-border/60 focus:border-primary transition-colors"
-                    placeholder="Comment vous appelle-t-on ?"
+                    className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-lg py-4 px-6 rounded-2xl backdrop-blur-sm shadow-inner"
+                    placeholder="Prénom et nom de famille"
                   />
                 </div>
                 
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-foreground font-medium">
-                    Votre email
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-foreground font-semibold text-base">
+                    Votre email professionnel
                   </Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     required
-                    className="bg-background/50 border-border/60 focus:border-primary transition-colors"
-                    placeholder="Où peut-on vous joindre ?"
+                    className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-lg py-4 px-6 rounded-2xl backdrop-blur-sm shadow-inner"
+                    placeholder="prenom@entreprise.com"
                   />
                 </div>
               </div>
 
               {/* Mission description */}
-              <div className="space-y-2">
-                <Label htmlFor="mission" className="text-foreground font-medium">
-                  Votre mission pour l'agent SEV
+              <div className="space-y-3">
+                <Label htmlFor="mission" className="text-foreground font-semibold text-base">
+                  Votre défi commercial
                 </Label>
                 <Textarea
                   id="mission"
                   name="mission"
                   required
                   rows={6}
-                  className="bg-background/50 border-border/60 focus:border-primary transition-colors resize-none"
-                  placeholder="Décrivez votre mission... Quelles données collecter ? Quels insights rechercher ? Quels résultats espérer ?"
+                  className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-lg py-4 px-6 rounded-2xl backdrop-blur-sm shadow-inner resize-none"
+                  placeholder="Décrivez vos objectifs de croissance, vos défis actuels, vos cibles prioritaires..."
                 />
-                <p className="text-sm text-muted-foreground">
-                  Plus vous serez précis, plus l'agent pourra être efficace. 
-                  N'hésitez pas à détailler vos objectifs et contraintes.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Plus vous détaillez votre contexte, plus nous pourrons personnaliser notre approche. 
+                  Parlez-nous de vos objectifs, votre marché, vos contraintes.
                 </p>
               </div>
 
               {/* Bouton de soumission */}
-              <div className="pt-4">
+              <div className="pt-6">
                 <Button
                   type="submit"
-                  variant="mission"
+                  variant="hero"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full md:w-auto group text-lg px-8 py-4 h-auto"
+                  className="w-full group text-xl px-10 py-6 h-auto shadow-2xl"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                      Transmission en cours...
+                      <div className="w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                      Analyse en cours...
                     </>
                   ) : (
                     <>
-                      Envoyer ma mission
-                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      Lancer ma stratégie databblead
+                      <Send className="w-6 h-6 group-hover:translate-x-1 transition-all duration-300" />
                     </>
                   )}
                 </Button>
               </div>
 
               {/* Note de confidentialité */}
-              <div className="pt-4 border-t border-border/30">
-                <p className="text-sm text-muted-foreground text-center">
-                  <span className="text-accent">Confidentialité assurée.</span> 
-                  Votre mission reste entre vos mains et les nôtres.
+              <div className="pt-6 border-t border-border/20">
+                <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                  <span className="text-accent font-semibold">Confidentialité totale.</span> 
+                  Vos données stratégiques restent protégées.
                   <br />
-                  Réponse sous 24h, sur-mesure et sans engagement.
+                  Analyse personnalisée sous 24h, sans engagement de votre part.
                 </p>
               </div>
             </form>

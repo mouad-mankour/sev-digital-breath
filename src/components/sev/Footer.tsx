@@ -8,20 +8,20 @@ export function Footer() {
         <div className="max-w-4xl mx-auto text-center space-y-6">
           {/* Message poétique */}
           <div>
-            <p className="text-muted-foreground italic">
-              "Où que vous soyez dans votre transformation digitale,
+            <p className="text-muted-foreground italic text-lg">
+              "Chaque donnée raconte une histoire.
               <br />
-              <span className="text-primary">SEV vous accompagne</span> avec intelligence et discrétion."
+              <span className="text-primary font-medium">databblead révèle celle de votre croissance</span> avec intelligence et précision."
             </p>
           </div>
 
           {/* Informations de contact */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-muted-foreground">
             <a 
-              href="mailto:contact@sev-agent.com"
-              className="hover:text-accent transition-colors"
+              href="mailto:contact@databblead.com"
+              className="hover:text-accent transition-colors font-medium"
             >
-              contact@sev-agent.com
+              contact@databblead.com
             </a>
             
             <span className="hidden md:block w-1 h-1 bg-muted-foreground/50 rounded-full" />
@@ -41,7 +41,7 @@ export function Footer() {
               <span className="text-primary font-medium">Loustad</span>
             </p>
             <p className="text-xs text-muted-foreground/60 mt-2">
-              © 2024 — Agent SEV, l'intelligence qui révèle vos données
+              © 2024 — databblead, l'intelligence qui transforme vos données en croissance
             </p>
           </div>
         </div>
