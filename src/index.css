@@ -231,3 +231,9 @@
   0%, 100% { opacity: 0.8; }
   50% { opacity: 1; }
 }
+
+/* Highlight effect for contact form */
+#contact-form.pulse-highlight {
+  box-shadow: 0 0 0 3px hsla(var(--primary), 0.35);
+  transition: box-shadow 0.3s ease;
+}

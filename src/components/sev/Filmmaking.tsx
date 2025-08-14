@@ -1,5 +1,6 @@
 import { Video, Heart, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToContact } from "@/lib/scroll";
 
 export function Filmmaking() {
   return (
@@ -83,7 +84,14 @@ export function Filmmaking() {
                 </div>
               </div>
 
-              <Button variant="neural" size="lg" className="w-full md:w-auto">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full md:w-auto px-8 py-4 text-lg hover:scale-105 transition-all duration-200"
+                onClick={scrollToContact}
+                data-cta="service_content_creation"
+                aria-label="Créer mon contenu impactant - Aller au formulaire de contact"
+              >
                 Créer mon contenu impactant
               </Button>
             </div>

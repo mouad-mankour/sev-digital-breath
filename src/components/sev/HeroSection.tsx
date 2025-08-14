@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/sev-hero-bg.jpg";
+import { scrollToContact } from "@/lib/scroll";
 
 export function HeroSection() {
   return (
@@ -57,22 +58,17 @@ export function HeroSection() {
         </p>
 
         {/* CTA principal */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex justify-center">
           <Button 
             variant="hero" 
             size="lg" 
-            className="group text-lg px-10 py-5 h-auto shadow-2xl"
+            className="group text-lg px-12 py-6 h-auto shadow-2xl hover:scale-105 transition-all duration-200"
+            onClick={scrollToContact}
+            data-cta="hero_launch_strategy"
+            aria-label="Lancer ma stratégie databblead - Aller au formulaire de contact"
           >
-            Découvrir notre approche data-driven
+            Lancer ma stratégie databblead
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-all duration-300" />
-          </Button>
-          
-          <Button 
-            variant="neural" 
-            size="lg" 
-            className="text-lg px-10 py-5 h-auto backdrop-blur-md"
-          >
-            Voir nos résultats clients
           </Button>
         </div>
 

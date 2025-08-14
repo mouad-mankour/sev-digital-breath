@@ -1,5 +1,6 @@
 import { Lightbulb, Building2, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToContact } from "@/lib/scroll";
 
 export function BusinessStrategy() {
   return (
@@ -83,7 +84,14 @@ export function BusinessStrategy() {
                 </div>
               </div>
 
-              <Button variant="mission" size="lg" className="w-full md:w-auto">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full md:w-auto px-8 py-4 text-lg hover:scale-105 transition-all duration-200"
+                onClick={scrollToContact}
+                data-cta="service_business_strategy"
+                aria-label="Structurer ma stratégie - Aller au formulaire de contact"
+              >
                 Structurer ma stratégie
               </Button>
             </div>

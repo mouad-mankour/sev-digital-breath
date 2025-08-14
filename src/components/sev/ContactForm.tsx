@@ -27,7 +27,7 @@ export function ContactForm() {
   };
 
   return (
-    <section className="py-24 relative">
+    <section id="contact-form" className="py-24 relative transition-all duration-300">
       {/* Effets visuels de fond */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="bubble absolute top-10 left-10 w-20 h-20 opacity-30" />

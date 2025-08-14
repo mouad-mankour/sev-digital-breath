@@ -1,5 +1,6 @@
 import { Target, TrendingUp, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToContact } from "@/lib/scroll";
 
 export function MediaBuying() {
   return (
@@ -53,7 +54,14 @@ export function MediaBuying() {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg" className="w-full md:w-auto">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full md:w-auto px-8 py-4 text-lg hover:scale-105 transition-all duration-200"
+                onClick={scrollToContact}
+                data-cta="service_media_buying"
+                aria-label="Planifier ma campagne ciblée - Aller au formulaire de contact"
+              >
                 Planifier ma campagne ciblée
               </Button>
             </div>

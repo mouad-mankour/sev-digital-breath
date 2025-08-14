@@ -1,5 +1,6 @@
 import { BarChart3, Brain, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToContact } from "@/lib/scroll";
 
 export function DataAnalytics() {
   return (
@@ -53,7 +54,14 @@ export function DataAnalytics() {
                 </div>
               </div>
 
-              <Button variant="data" size="lg" className="w-full md:w-auto">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full md:w-auto px-8 py-4 text-lg hover:scale-105 transition-all duration-200"
+                onClick={scrollToContact}
+                data-cta="service_data_analytics"
+                aria-label="Obtenir mon audit data - Aller au formulaire de contact"
+              >
                 Obtenir mon audit data
               </Button>
             </div>
