@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { BarChart3, Target, Award, Zap } from "lucide-react";
+import { BarChart3, Target, Award, Zap, Database, Brain, Rocket, Shield } from "lucide-react";
 import { scrollToContact } from "@/lib/scroll";
 import { useEffect, useRef, useState } from "react";
 
 const StrategicAdvantage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [counters, setCounters] = useState({
     companies: 0,
     targeting: 0,
@@ -12,27 +13,49 @@ const StrategicAdvantage = () => {
     roi: 0
   });
   const sectionRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
-          // Animate counters
-          animateCounter('companies', 250000, 2000);
-          animateCounter('targeting', 100, 1500);
-          animateCounter('decisions', 95, 1800);
-          animateCounter('roi', 300, 2200);
+          // Animate counters with staggered timing
+          setTimeout(() => animateCounter('companies', 250000, 2500), 500);
+          setTimeout(() => animateCounter('targeting', 100, 2000), 800);
+          setTimeout(() => animateCounter('decisions', 95, 2200), 1100);
+          setTimeout(() => animateCounter('roi', 300, 2800), 1400);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    // Mouse tracking for interactive effects
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: ((e.clientX - rect.left) / rect.width) * 100,
+          y: ((e.clientY - rect.top) / rect.height) * 100
+        });
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      observer.disconnect();
+      if (container) {
+        container.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
   }, [isVisible]);
 
   const animateCounter = (key: keyof typeof counters, target: number, duration: number) => {
@@ -52,27 +75,35 @@ const StrategicAdvantage = () => {
 
   const differentiators = [
     {
-      icon: BarChart3,
+      icon: Database,
       value: `+${counters.companies.toLocaleString()}`,
       label: "entreprises marocaines",
+      subtitle: "Base exclusive classifiée",
+      gradient: "from-emerald-400 to-teal-600",
       delay: "0ms"
     },
     {
-      icon: Target,
+      icon: Brain,
       value: `${counters.targeting}%`,
       label: "Ciblage intelligent & signaux d'achat",
+      subtitle: "IA prédictive avancée",
+      gradient: "from-violet-400 to-purple-600",
       delay: "200ms"
     },
     {
-      icon: Award,
+      icon: Shield,
       value: `${counters.decisions}%`,
       label: "Accès aux décideurs validés",
+      subtitle: "Contacts vérifiés premium",
+      gradient: "from-blue-400 to-cyan-600",
       delay: "400ms"
     },
     {
-      icon: Zap,
+      icon: Rocket,
       value: `+${counters.roi}%`,
       label: "ROI immédiat & mesurable",
+      subtitle: "Performance garantie",
+      gradient: "from-orange-400 to-red-600",
       delay: "600ms"
     }
   ];
@@ -80,83 +111,234 @@ const StrategicAdvantage = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen py-24 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-black"
+      className="relative min-h-screen py-32 overflow-hidden"
+      style={{
+        background: `
+          radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+          linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%)
+        `
+      }}
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-sev-primary/10 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-sev-secondary/10 blur-3xl animate-pulse delay-1000" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sev-primary/5 to-transparent skew-y-12 transform" />
+      {/* Dynamic Background Effects */}
+      <div 
+        ref={containerRef}
+        className="absolute inset-0"
+      >
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sev-primary/10 to-transparent animate-pulse" 
+               style={{ transform: `translateX(${mousePosition.x * 0.1}px)` }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000"
+               style={{ transform: `translateY(${mousePosition.y * 0.1}px)` }} />
+        </div>
+        
+        {/* Floating Orbs */}
+        <div className="absolute top-20 left-20 w-96 h-96 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 blur-3xl animate-float" />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-gradient-to-br from-violet-500/20 to-purple-600/20 blur-3xl animate-float delay-1000" />
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-600/20 blur-3xl animate-float delay-2000" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-3xl animate-float delay-3000" />
+        
+        {/* Data Flow Lines */}
+        <div className="absolute inset-0">
+          <svg className="w-full h-full opacity-30" viewBox="0 0 1000 1000">
+            <defs>
+              <linearGradient id="dataFlow1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="rgba(139, 92, 246, 0)" />
+                <stop offset="50%" stopColor="rgba(139, 92, 246, 0.8)" />
+                <stop offset="100%" stopColor="rgba(139, 92, 246, 0)" />
+              </linearGradient>
+            </defs>
+            <path d="M100,200 Q500,100 900,300" stroke="url(#dataFlow1)" strokeWidth="2" fill="none" className="animate-pulse" />
+            <path d="M100,600 Q300,400 700,500" stroke="url(#dataFlow1)" strokeWidth="2" fill="none" className="animate-pulse delay-1000" />
+            <path d="M200,800 Q600,700 800,400" stroke="url(#dataFlow1)" strokeWidth="2" fill="none" className="animate-pulse delay-2000" />
+          </svg>
+        </div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-sev-accent to-sev-primary bg-clip-text text-transparent">
-            L'Atout Stratégique de Databblead
-          </h2>
-          <p className="text-xl md:text-2xl text-sev-accent font-light mb-8">
-            L'IA est partout. La data intelligente, c'est notre signature.
-          </p>
+        <div className={`text-center mb-20 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <div className="relative inline-block mb-8">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
+              L'Atout Stratégique
+            </h2>
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-sev-primary to-sev-secondary bg-clip-text text-transparent">
+              de Databblead
+            </div>
+            {/* Underline effect */}
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
+          </div>
+          
+          <div className="relative">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
+              L'IA est partout.
+            </p>
+            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sev-accent via-sev-primary to-sev-secondary">
+              La data intelligente, c'est notre signature.
+            </p>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-sev-primary/50 animate-pulse" />
+            <div className="absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-sev-secondary/50 animate-pulse delay-1000" />
+          </div>
         </div>
 
         {/* Narrative Text */}
-        <div className={`max-w-4xl mx-auto text-center mb-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-            <span className="text-white font-semibold">Databblead détient la plus grande base classifiée du Maroc</span> : plus de 250 000 entreprises actives dans tous les secteurs.
-          </p>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-            Ce patrimoine exclusif, enrichi avec les contacts décisionnaires clés, est exploité grâce à notre 
-            <span className="text-sev-primary font-semibold"> expertise en intelligence économique</span>.
-          </p>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            <span className="text-sev-accent font-semibold">Résultat</span> : des pipelines sur mesure, prêts à activer, qui transforment vos ambitions en 
-            <span className="text-white font-semibold"> croissance mesurable</span>.
-          </p>
+        <div className={`max-w-6xl mx-auto text-center mb-24 transition-all duration-1500 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <div className="relative p-12 rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/20 shadow-2xl">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sev-primary/10 to-sev-secondary/10 animate-pulse" />
+            
+            <div className="relative z-10 space-y-8">
+              <p className="text-xl md:text-2xl text-gray-100 leading-relaxed">
+                <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-2xl md:text-3xl border border-emerald-400/30">
+                  Databblead détient la plus grande base classifiée du Maroc
+                </span>
+              </p>
+              
+              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed">
+                Plus de <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-600">250 000</span> entreprises actives dans tous les secteurs.
+              </p>
+              
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xl md:text-2xl text-gray-200">
+                <span>Ce patrimoine exclusif, enrichi avec les contacts décisionnaires clés,</span>
+                <span className="px-6 py-3 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-600/20 text-violet-300 font-bold border border-violet-400/30">
+                  intelligence économique
+                </span>
+              </div>
+              
+              <div className="text-2xl md:text-3xl font-bold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">Résultat</span>
+                <span className="text-gray-200"> : des pipelines sur mesure qui transforment vos ambitions en </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sev-accent to-sev-primary">croissance mesurable</span>
+              </div>
+            </div>
+            
+            {/* Corner decorations */}
+            <div className="absolute top-4 left-4 w-12 h-12 border-l-2 border-t-2 border-sev-primary/50 rounded-tl-lg" />
+            <div className="absolute top-4 right-4 w-12 h-12 border-r-2 border-t-2 border-sev-secondary/50 rounded-tr-lg" />
+            <div className="absolute bottom-4 left-4 w-12 h-12 border-l-2 border-b-2 border-sev-accent/50 rounded-bl-lg" />
+            <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-sev-primary/50 rounded-br-lg" />
+          </div>
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {differentiators.map((item, index) => (
             <div
               key={index}
-              className={`text-center p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-sev-primary/30 transition-all duration-500 hover:transform hover:scale-105 hover:bg-white/10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group relative text-center p-8 rounded-3xl backdrop-blur-xl border transition-all duration-700 hover:transform hover:scale-110 hover:rotate-1 ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 rotate-3'}`}
               style={{ 
                 transitionDelay: isVisible ? item.delay : '0ms',
-                animationDelay: item.delay 
+                background: `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)`,
+                borderColor: `rgba(255,255,255,0.2)`
               }}
             >
-              <div className="mb-6 flex justify-center">
-                <div className="p-4 rounded-xl bg-gradient-to-br from-sev-primary/20 to-sev-secondary/20 border border-sev-primary/30">
-                  <item.icon className="w-8 h-8 text-sev-primary" />
+              {/* Animated background */}
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+              
+              {/* Icon container */}
+              <div className="mb-8 flex justify-center relative">
+                <div className={`relative p-6 rounded-2xl bg-gradient-to-br ${item.gradient} shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110`}>
+                  <item.icon className="w-12 h-12 text-white drop-shadow-lg" />
+                  
+                  {/* Pulsing ring */}
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.gradient} animate-ping opacity-20`} />
                 </div>
               </div>
-              <div className="mb-4">
-                <span className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sev-primary to-sev-accent bg-clip-text text-transparent">
+              
+              {/* Counter */}
+              <div className="mb-6">
+                <div className={`text-5xl md:text-6xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r ${item.gradient}`}>
                   {item.value}
-                </span>
+                </div>
+                <div className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
+                  {item.subtitle}
+                </div>
               </div>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+              
+              {/* Label */}
+              <p className="text-base md:text-lg text-gray-200 leading-relaxed font-medium group-hover:text-white transition-colors duration-300">
                 {item.label}
               </p>
+              
+              {/* Progress bar */}
+              <div className="mt-6 w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                <div 
+                  className={`h-full bg-gradient-to-r ${item.gradient} rounded-full transition-all duration-1000 delay-1000 ${isVisible ? 'w-full' : 'w-0'}`}
+                  style={{ transitionDelay: `${1000 + index * 200}ms` }}
+                />
+              </div>
+              
+              {/* Corner accent */}
+              <div className={`absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-br ${item.gradient} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className={`text-center transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <Button
-            onClick={scrollToContact}
-            className="hero-gradient text-white px-12 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-sev-primary/25 transition-all duration-300 hover:scale-105 border border-white/20"
-            data-cta="strategic_advantage_pipeline"
-          >
-            Construire mon pipeline stratégique
-          </Button>
+        <div className={`text-center transition-all duration-1500 delay-1200 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}>
+          <div className="relative inline-block">
+            {/* Glow effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sev-primary to-sev-secondary blur-xl opacity-50 animate-pulse" />
+            
+            <Button
+              onClick={scrollToContact}
+              className="relative group px-16 py-8 text-xl md:text-2xl font-bold rounded-full 
+                         bg-gradient-to-r from-sev-primary via-sev-accent to-sev-secondary 
+                         text-white shadow-2xl hover:shadow-3xl
+                         border-2 border-white/30 hover:border-white/50
+                         transition-all duration-500 hover:scale-110 hover:rotate-1
+                         backdrop-blur-sm
+                         before:absolute before:inset-0 before:rounded-full 
+                         before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent 
+                         before:translate-x-[-100%] before:transition-transform before:duration-700
+                         hover:before:translate-x-[100%]
+                         overflow-hidden"
+              data-cta="strategic_advantage_pipeline"
+            >
+              <span className="relative z-10 flex items-center gap-4">
+                <Database className="w-8 h-8" />
+                Construire mon pipeline stratégique
+                <Rocket className="w-8 h-8 group-hover:translate-x-2 transition-transform duration-300" />
+              </span>
+              
+              {/* Inner glow */}
+              <div className="absolute inset-2 rounded-full bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Button>
+            
+            {/* Floating particles */}
+            <div className="absolute -top-2 -left-2 w-4 h-4 bg-sev-primary rounded-full animate-bounce opacity-60" />
+            <div className="absolute -top-4 right-4 w-3 h-3 bg-sev-secondary rounded-full animate-bounce delay-500 opacity-60" />
+            <div className="absolute -bottom-2 left-8 w-2 h-2 bg-sev-accent rounded-full animate-bounce delay-1000 opacity-60" />
+          </div>
+          
+          <p className="mt-8 text-gray-400 text-lg max-w-2xl mx-auto">
+            Rejoignez les entreprises qui ont transformé leur approche commerciale avec notre intelligence data exclusive
+          </p>
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sev-primary/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full">
+        <div className="h-px bg-gradient-to-r from-transparent via-sev-primary/50 to-transparent" />
+        <div className="h-4 bg-gradient-to-t from-sev-primary/10 to-transparent" />
+      </div>
+      
+      {/* Floating data points */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-sev-primary/30 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
     </section>
   );
 };
