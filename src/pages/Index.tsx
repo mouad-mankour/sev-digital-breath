@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sev/HeroSection";
 import { SevMechanism } from "@/components/sev/SevMechanism";
+import StrategicAdvantage from "@/components/sev/StrategicAdvantage";
 import { MediaBuying } from "@/components/sev/MediaBuying";
 import { Filmmaking } from "@/components/sev/Filmmaking";
 import { DataAnalytics } from "@/components/sev/DataAnalytics";
@@ -13,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen">
       <HeroSection />
       <SevMechanism />
+      <StrategicAdvantage />
       <MediaBuying />
       <Filmmaking />
       <DataAnalytics />
