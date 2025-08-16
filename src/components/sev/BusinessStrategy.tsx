@@ -4,33 +4,33 @@ import { scrollToContact } from "@/lib/scroll";
 
 export function BusinessStrategy() {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 sm:py-20 md:py-24 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/2 left-1/4 w-1 h-full data-flow rotate-45" />
-        <div className="absolute bottom-1/2 right-1/4 w-1 h-full data-flow rotate-45" style={{ animationDelay: '2s' }} />
+        <div className="hidden sm:block absolute top-1/2 left-1/4 w-1 h-full data-flow rotate-45" />
+        <div className="hidden sm:block absolute bottom-1/2 right-1/4 w-1 h-full data-flow rotate-45" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="flex justify-center mb-8">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-success-green/20 flex items-center justify-center shadow-xl">
-                <Lightbulb className="w-10 h-10 text-primary" />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary/20 to-success-green/20 flex items-center justify-center shadow-xl">
+                <Lightbulb className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
               Business Strategy &
-              <span className="text-primary ml-3">Modeling</span>
+              <span className="text-primary ml-2 sm:ml-3">Modeling</span>
             </h2>
             
-            <p className="text-2xl font-light text-foreground/90 mb-4 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl font-light text-foreground/90 mb-3 sm:mb-4 leading-relaxed px-4">
               Des fondations solides pour une croissance durable.
             </p>
             
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-success-green rounded-full mx-auto shadow-lg" />
+            <div className="w-16 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary to-success-green rounded-full mx-auto shadow-lg" />
           </div>
 
           {/* Content Grid */}

@@ -4,33 +4,33 @@ import { scrollToContact } from "@/lib/scroll";
 
 export function Filmmaking() {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 sm:py-20 md:py-24 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-1/4 w-1 h-full data-flow rotate-90" />
-        <div className="absolute bottom-0 left-1/4 w-1 h-full data-flow rotate-90" style={{ animationDelay: '1.5s' }} />
+        <div className="hidden sm:block absolute top-0 right-1/4 w-1 h-full data-flow rotate-90" />
+        <div className="hidden sm:block absolute bottom-0 left-1/4 w-1 h-full data-flow rotate-90" style={{ animationDelay: '1.5s' }} />
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="flex justify-center mb-8">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center shadow-xl">
-                <Video className="w-10 h-10 text-accent" />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center shadow-xl">
+                <Video className="w-8 h-8 sm:w-10 sm:h-10 text-accent" />
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
               Filmmaking &
-              <span className="text-primary ml-3">Content Creation</span>
+              <span className="text-primary ml-2 sm:ml-3">Content Creation</span>
             </h2>
             
-            <p className="text-2xl font-light text-foreground/90 mb-4 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl font-light text-foreground/90 mb-3 sm:mb-4 leading-relaxed px-4">
               Du storytelling visuel qui transforme vos prospects en clients fidèles.
             </p>
             
-            <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary rounded-full mx-auto shadow-lg" />
+            <div className="w-16 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-accent to-primary rounded-full mx-auto shadow-lg" />
           </div>
 
           {/* Content Grid */}
