@@ -133,11 +133,7 @@ const StrategicAdvantage = () => {
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <div className="relative inline-block mb-6 sm:mb-8 rounded-xl px-4 sm:px-8 md:px-16 lg:px-34 py-4 sm:py-6 md:py-[16px]">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight text-amber-400 px-2 sm:px-4">Databblead
- détient la plus grande
- base de donnée
- BUSINESS
-du Maroc</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-5xl 2xl:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight text-amber-400 px-2 sm:px-4 lg:text-7xl">Databblead détient la plus grande base de donnée BUSINESS du Maroc</h2>
             
             {/* Underline effect */}
             <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
@@ -162,8 +158,8 @@ du Maroc</h2>
             
             <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed">
-                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">👉 Vos marchés cartographiés.
-👉Vos prospects identifiés.
+                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">👉 Vos marchés cartographiés.      
+👉Vos prospects identifiés.          
  👉Vos opportunités qualifiées. </span>
               </p>
               
