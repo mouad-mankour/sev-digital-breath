@@ -171,10 +171,10 @@ const StrategicAdvantage = () => {
           
           <div className="relative px-4">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
-              L'IA est partout.
+              Data BtoB exclusive × IA analytique × Science des données
             </p>
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sev-accent via-sev-primary to-sev-secondary">
-              La data intelligente, c'est notre signature.
+              L'art de transformer la donnée en avantage stratégique
             </p>
             
             {/* Decorative elements - Cachés sur très petit écran */}
