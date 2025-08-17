@@ -132,8 +132,8 @@ const StrategicAdvantage = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10 bg-black">
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <div className="relative inline-block mb-6 sm:mb-8 rounded-xl my-[21px] mx-[237px] py-[16px] px-[34px]">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight mx-[60px] text-amber-400 lg:text-5xl">Databblead détient la plus grande base de donnée BUSINESS du Maroc</h2>
+          <div className="relative inline-block mb-6 sm:mb-8 rounded-xl px-4 sm:px-8 md:px-16 lg:px-34 py-4 sm:py-6 md:py-[16px]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight text-amber-400 px-2 sm:px-4">Databblead détient la plus grande base de donnée BUSINESS du Maroc</h2>
             
             {/* Underline effect */}
             <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />

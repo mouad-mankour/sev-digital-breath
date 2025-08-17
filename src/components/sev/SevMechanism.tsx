@@ -29,10 +29,10 @@ export function SevMechanism() {
     <section className="py-24 relative">
       <div className="container mx-auto px-6">
         {/* Titre de section */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             Notre méthode
-            <span className="data-flow bg-clip-text text-transparent ml-3">databblead</span>
+            <span className="data-flow bg-clip-text text-transparent ml-2 sm:ml-3">databblead</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Trois piliers pour transformer vos données en pipeline commercial. 
