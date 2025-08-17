@@ -133,7 +133,7 @@ const StrategicAdvantage = () => {
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <div className="relative inline-block mb-6 sm:mb-8 rounded-xl my-[21px] mx-[237px] py-[16px] px-[34px]">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight mx-[60px] text-amber-400 lg:text-5xl">Databblead détient la plus grande base de donnée BUSINESS classifiée § analysée du Maroc</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight mx-[60px] text-amber-400 lg:text-5xl">Databblead détient la plus grande base de donnée BUSINESS du Maroc</h2>
             
             {/* Underline effect */}
             <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
@@ -158,9 +158,7 @@ const StrategicAdvantage = () => {
             
             <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed">
-                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl border border-emerald-400/30">
-                  Databblead détient la plus grande base classifiée du Maroc
-                </span>
+                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl border border-emerald-400/30">la promesse de Databblead: Vos marchés cartographiés, Vos opportunités révélées et activés.</span>
               </p>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed">
@@ -168,14 +166,14 @@ const StrategicAdvantage = () => {
               </p>
               
               <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200">
-                <span className="text-center">Ce patrimoine exclusif, enrichi avec les contacts décisionnaires clés,</span>
+                <span className="text-center">Ce patrimoine exclusif, enrichi avec les contacts décisionnaires clés de votre choix...</span>
                 <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-600/20 text-violet-300 font-bold border border-violet-400/30 text-center">intelligence économique stratégique ° Maroc </span>
               </div>
               
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">Résultat</span>
                 <span className="text-gray-200"> : des pipelines sur mesure qui transforment vos ambitions en </span>
-                <span className="bg-clip-text bg-gradient-to-r from-sev-accent to-sev-primary text-green-400">croissance mesurable</span>
+                <span className="bg-clip-text bg-gradient-to-r from-sev-accent to-sev-primary text-green-400">résultats tangibles</span>
               </div>
             </div>
             
