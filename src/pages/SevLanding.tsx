@@ -1,3 +1,4 @@
+import { Header } from "@/components/sev/Header";
 import { HeroSection } from "@/components/sev/HeroSection";
 import { SevMechanism } from "@/components/sev/SevMechanism";
 import { UseCases } from "@/components/sev/UseCases";
@@ -7,6 +8,7 @@ import { Footer } from "@/components/sev/Footer";
 export default function SevLanding() {
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroSection />
       <SevMechanism />
       <UseCases />

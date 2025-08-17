@@ -1,3 +1,4 @@
+import { Header } from "@/components/sev/Header";
 import { HeroSection } from "@/components/sev/HeroSection";
 import { SevMechanism } from "@/components/sev/SevMechanism";
 import StrategicAdvantage from "@/components/sev/StrategicAdvantage";
@@ -12,6 +13,7 @@ import { Footer } from "@/components/sev/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroSection />
       <SevMechanism />
       <StrategicAdvantage />
