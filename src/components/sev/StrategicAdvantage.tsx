@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { BarChart3, Target, Award, Zap, Database, Brain, Rocket, Shield } from "lucide-react";
 import { scrollToContact } from "@/lib/scroll";
 import { useEffect, useRef, useState } from "react";
+
 const StrategicAdvantage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({
@@ -16,6 +17,7 @@ const StrategicAdvantage = () => {
   });
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !isVisible) {
@@ -29,6 +31,7 @@ const StrategicAdvantage = () => {
     }, {
       threshold: 0.2
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
@@ -43,10 +46,12 @@ const StrategicAdvantage = () => {
         });
       }
     };
+
     const container = containerRef.current;
     if (container) {
       container.addEventListener('mousemove', handleMouseMove);
     }
+
     return () => {
       observer.disconnect();
       if (container) {
@@ -54,10 +59,12 @@ const StrategicAdvantage = () => {
       }
     };
   }, [isVisible]);
+
   const animateCounter = (key: keyof typeof counters, target: number, duration: number) => {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
+
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) {
@@ -70,6 +77,7 @@ const StrategicAdvantage = () => {
       }));
     }, 16);
   };
+
   const differentiators = [{
     icon: Database,
     value: `+${counters.companies.toLocaleString()}`,
@@ -99,22 +107,24 @@ const StrategicAdvantage = () => {
     gradient: "from-orange-400 to-red-600",
     delay: "600ms"
   }];
-  return <section ref={sectionRef} className="relative min-h-screen py-16 sm:py-24 md:py-32 overflow-hidden" style={{
-    background: `
-          radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-          linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%)
-        `
-  }}>
+
+  return (
+    <section ref={sectionRef} className="relative min-h-screen py-4 sm:py-8 md:py-16 overflow-hidden" style={{
+      background: `
+        radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%)
+      `
+    }}>
       {/* Dynamic Background Effects */}
       <div ref={containerRef} className="absolute inset-0">
         {/* Animated Grid - Simplifiée sur mobile */}
         <div className="absolute inset-0 opacity-10 sm:opacity-20">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sev-primary/10 to-transparent animate-pulse" style={{
-          transform: `translateX(${mousePosition.x * 0.05}px)`
-        }} />
+            transform: `translateX(${mousePosition.x * 0.05}px)`
+          }} />
           <div style={{
-          transform: `translateY(${mousePosition.y * 0.05}px)`
-        }} className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000 bg-black" />
+            transform: `translateY(${mousePosition.y * 0.05}px)`
+          }} className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000 bg-black" />
         </div>
         
         {/* Floating Orbs - Optimisées mobile */}
@@ -131,16 +141,28 @@ const StrategicAdvantage = () => {
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 bg-black">
         {/* Header */}
-        <div className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        <div className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <div className="relative inline-block mb-6 sm:mb-8 rounded-xl px-4 sm:px-8 md:px-16 lg:px-34 py-4 sm:py-6 md:py-[16px]">
-            <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-5xl 2xl:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight text-amber-400 px-2 sm:px-4 lg:text-7xl">Databblead détient la plus grande base de donnée BUSINESS du Maroc</h2>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text text-transparent animate-gradient bg-[length:200%_200%] leading-tight px-2 sm:px-4 animate-pulse hover:scale-105 transition-all duration-500 cursor-default">
+              <span className="inline-block animate-bounce">Databblead</span>{" "}
+              <span className="inline-block" style={{ animationDelay: '0.1s' }}>détient</span>{" "}
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0.2s' }}>la</span>{" "}
+              <span className="inline-block" style={{ animationDelay: '0.3s' }}>plus</span>{" "}
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0.4s' }}>grande</span>{" "}
+              <span className="inline-block" style={{ animationDelay: '0.5s' }}>base</span>{" "}
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0.6s' }}>de</span>{" "}
+              <span className="inline-block" style={{ animationDelay: '0.7s' }}>donnée</span>{" "}
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0.8s' }}>BUSINESS</span>{" "}
+              <span className="inline-block" style={{ animationDelay: '0.9s' }}>du</span>{" "}
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1s' }}>Maroc</span>
+            </h2>
             
             {/* Underline effect */}
             <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
           </div>
           
           <div className="relative px-4">
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">L'ai est désormais partout , une data stratégique c'est unique</p>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">Notre data B2B combinée à l'IA analytique</p>
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sev-accent via-sev-primary to-sev-secondary">
               L'art de transformer la donnée en avantage stratégique
             </p>
@@ -158,9 +180,9 @@ const StrategicAdvantage = () => {
             
             <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed">
-                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">👉 Vos marchés cartographiés.      
-👉Vos prospects identifiés.          
- 👉Vos opportunités qualifiées. </span>
+                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">👉 Vos marchés cartographiés.      
+👉Vos prospects identifiés.          
+ 👉Vos opportunités qualifiées. </span>
               </p>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed">
@@ -169,7 +191,7 @@ const StrategicAdvantage = () => {
               
               <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200">
                 <span className="text-center">Ce patrimoine exclusif, enrichi avec les contacts décisionnaires clés de votre choix...</span>
-                <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-600/20 text-violet-300 font-bold border border-violet-400/30 text-center">intelligence économique stratégique ° Maroc </span>
+                <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-600/20 text-violet-300 font-bold border border-violet-400/30 text-center">intelligence économique stratégique ° Maroc </span>
               </div>
               
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center">
@@ -189,11 +211,12 @@ const StrategicAdvantage = () => {
 
         {/* Differentiators Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 md:mb-20 px-4">
-          {differentiators.map((item, index) => <div key={index} className={`group relative text-center p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl backdrop-blur-xl border transition-all duration-700 hover:transform hover:scale-105 sm:hover:scale-110 hover:rotate-1 ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 rotate-3'}`} style={{
-          transitionDelay: isVisible ? item.delay : '0ms',
-          background: `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)`,
-          borderColor: `rgba(255,255,255,0.2)`
-        }}>
+          {differentiators.map((item, index) => (
+            <div key={index} className={`group relative text-center p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl backdrop-blur-xl border transition-all duration-700 hover:transform hover:scale-105 sm:hover:scale-110 hover:rotate-1 ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 rotate-3'}`} style={{
+              transitionDelay: isVisible ? item.delay : '0ms',
+              background: `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)`,
+              borderColor: `rgba(255,255,255,0.2)`
+            }}>
               {/* Animated background */}
               <div className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
               
@@ -225,13 +248,14 @@ const StrategicAdvantage = () => {
               {/* Progress bar */}
               <div className="mt-4 sm:mt-6 w-full bg-white/10 rounded-full h-1 sm:h-2 overflow-hidden">
                 <div className={`h-full bg-gradient-to-r ${item.gradient} rounded-full transition-all duration-1000 delay-1000 ${isVisible ? 'w-full' : 'w-0'}`} style={{
-              transitionDelay: `${1000 + index * 200}ms`
-            }} />
+                  transitionDelay: `${1000 + index * 200}ms`
+                }} />
               </div>
               
               {/* Corner accent */}
               <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gradient-to-br ${item.gradient} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
-            </div>)}
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
@@ -283,13 +307,17 @@ const StrategicAdvantage = () => {
       
       {/* Floating data points */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => <div key={i} className="absolute w-1 h-1 bg-sev-primary/30 rounded-full animate-float" style={{
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 5}s`,
-        animationDuration: `${3 + Math.random() * 4}s`
-      }} />)}
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="absolute w-1 h-1 bg-sev-primary/30 rounded-full animate-float" style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${3 + Math.random() * 4}s`
+          }} />
+        ))}
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default StrategicAdvantage;

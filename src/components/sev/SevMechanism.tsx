@@ -26,7 +26,7 @@ const dataSteps = [
 
 export function SevMechanism() {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 relative">
       <div className="container mx-auto px-6">
         {/* Titre de section */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
