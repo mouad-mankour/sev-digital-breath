@@ -5,29 +5,25 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-
     toast({
       title: "Stratégie reçue ✨",
-      description: "Votre projet a été transmis à databblead. Nous analysons votre défi et vous recontactons sous 24h.",
+      description: "Votre projet a été transmis à databblead. Nous analysons votre défi et vous recontactons sous 24h."
     });
-
     setIsSubmitting(false);
     e.currentTarget.reset();
   };
-
-  return (
-    <section id="contact-form" className="py-16 sm:py-20 md:py-24 relative transition-all duration-300">
+  return <section id="contact-form" className="py-16 sm:py-20 md:py-24 relative transition-all duration-300">
       {/* Effets visuels de fond */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="bubble absolute top-10 left-4 sm:left-10 w-12 sm:w-20 h-12 sm:h-20 opacity-30" />
@@ -46,7 +42,7 @@ export function ContactForm() {
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight px-4">
               Prêt à transformer
-              <span className="text-accent ml-2 sm:ml-3">vos données en croissance ?</span>
+              <span className="text-accent ml-2 sm:ml-3">notre base BUSINESS en LEAD ?</span>
             </h2>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
@@ -65,27 +61,14 @@ export function ContactForm() {
                   <Label htmlFor="name" className="text-foreground font-semibold text-sm sm:text-base">
                     Votre nom
                   </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    required
-                    className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-base sm:text-lg py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl backdrop-blur-sm shadow-inner"
-                    placeholder="Prénom et nom de famille"
-                  />
+                  <Input id="name" name="name" required className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-base sm:text-lg py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl backdrop-blur-sm shadow-inner" placeholder="Prénom et nom de famille" />
                 </div>
                 
                 <div className="space-y-2 sm:space-y-3">
                   <Label htmlFor="email" className="text-foreground font-semibold text-sm sm:text-base">
                     Votre email professionnel
                   </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-base sm:text-lg py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl backdrop-blur-sm shadow-inner"
-                    placeholder="prenom@entreprise.com"
-                  />
+                  <Input id="email" name="email" type="email" required className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-base sm:text-lg py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl backdrop-blur-sm shadow-inner" placeholder="prenom@entreprise.com" />
                 </div>
               </div>
 
@@ -94,14 +77,7 @@ export function ContactForm() {
                 <Label htmlFor="mission" className="text-foreground font-semibold text-sm sm:text-base">
                   Votre défi commercial
                 </Label>
-                <Textarea
-                  id="mission"
-                  name="mission"
-                  required
-                  rows={5}
-                  className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-base sm:text-lg py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl backdrop-blur-sm shadow-inner resize-none"
-                  placeholder="Décrivez vos objectifs de croissance, vos défis actuels, vos cibles prioritaires..."
-                />
+                <Textarea id="mission" name="mission" required rows={5} className="bg-muted/30 border-border/30 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-500 text-base sm:text-lg py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl backdrop-blur-sm shadow-inner resize-none" placeholder="Décrivez vos objectifs de croissance, vos défis actuels, vos cibles prioritaires..." />
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed px-2">
                   Plus vous détaillez votre contexte, plus nous pourrons personnaliser notre approche. 
                   Parlez-nous de vos objectifs, votre marché, vos contraintes.
@@ -110,26 +86,16 @@ export function ContactForm() {
 
               {/* Bouton de soumission */}
               <div className="pt-4 sm:pt-6">
-                <Button
-                  type="submit"
-                  variant="hero"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full group text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-6 h-auto shadow-2xl"
-                >
-                  {isSubmitting ? (
-                    <>
+                <Button type="submit" variant="hero" size="lg" disabled={isSubmitting} className="w-full group text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-6 h-auto shadow-2xl">
+                  {isSubmitting ? <>
                       <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-current border-t-transparent rounded-full animate-spin" />
                       <span className="hidden sm:inline">Analyse en cours...</span>
                       <span className="sm:hidden">Analyse...</span>
-                    </>
-                  ) : (
-                    <>
+                    </> : <>
                       <span className="hidden sm:inline">Lancer ma stratégie databblead</span>
                       <span className="sm:hidden">Ma stratégie databblead</span>
                       <Send className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-all duration-300" />
-                    </>
-                  )}
+                    </>}
                 </Button>
               </div>
 
@@ -146,6 +112,5 @@ export function ContactForm() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

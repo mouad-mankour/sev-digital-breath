@@ -158,9 +158,9 @@ const StrategicAdvantage = () => {
             
             <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed">
-                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">Vos prospects identifiés. 
-Vos opportunités qualifiées. 
-Vos pipelines transformés.</span>
+                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">👉 Vos marchés cartographiés.
+👉Vos prospects identifiés.
+ 👉Vos opportunités qualifiées. </span>
               </p>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed">
