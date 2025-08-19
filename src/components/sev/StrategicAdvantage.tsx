@@ -187,7 +187,7 @@ const StrategicAdvantage = () => {
         {/* Narrative Text */}
         <div className={`max-w-6xl mx-auto text-center mb-16 sm:mb-20 md:mb-24 transition-all duration-1500 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <div className="relative p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/20 shadow-2xl mx-4">
-            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-sev-primary/10 to-sev-secondary/10 animate-pulse" />
+            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-sev-primary/10 to-sev-secondary/10 animate-pulse bg-indigo-900" />
             
             <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed">

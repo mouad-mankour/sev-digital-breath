@@ -1,6 +1,5 @@
 export function Footer() {
-  return (
-    <footer className="py-12 border-t border-border/30 relative">
+  return <footer className="py-12 border-t border-border/30 relative">
       {/* Ligne de données subtile */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       
@@ -17,19 +16,13 @@ export function Footer() {
 
           {/* Informations de contact */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-muted-foreground">
-            <a 
-              href="mailto:contact@databblead.com"
-              className="hover:text-accent transition-colors font-medium"
-            >
+            <a href="mailto:contact@databblead.com" className="hover:text-accent transition-colors font-medium">
               contact@databblead.com
             </a>
             
             <span className="hidden md:block w-1 h-1 bg-muted-foreground/50 rounded-full" />
             
-            <a 
-              href="#"
-              className="hover:text-accent transition-colors"
-            >
+            <a href="#" className="hover:text-accent transition-colors">
               Mentions légales
             </a>
           </div>
@@ -38,14 +31,11 @@ export function Footer() {
           <div className="pt-6 border-t border-border/20">
             <p className="text-sm text-muted-foreground">
               Fait avec <span className="text-accent">♡</span> par{" "}
-              <span className="text-primary font-medium">Loustad</span>
+              <span className="text-primary font-medium">Databblead</span>
             </p>
-            <p className="text-xs text-muted-foreground/60 mt-2">
-              © 2024 — databblead, l'intelligence qui transforme vos données en croissance
-            </p>
+            <p className="text-xs text-muted-foreground/60 mt-2">© 2025 — databblead, l'intelligence qui transforme vos données en croissance</p>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
