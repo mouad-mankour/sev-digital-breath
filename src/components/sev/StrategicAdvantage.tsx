@@ -167,7 +167,7 @@ const StrategicAdvantage = () => {
           </div>
           
           <div className="relative px-2 sm:px-4">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 font-light">Notre data BtoB combinée à l'IA analytique
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 font-light">L'AI est partout, une data stratégique c'est unique
           </p>
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sev-accent via-sev-primary to-sev-secondary">
               L'art de la science des données stratégiques
