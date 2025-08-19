@@ -99,7 +99,7 @@ const StrategicAdvantage = () => {
     gradient: "from-orange-400 to-red-600",
     delay: "600ms"
   }];
-  return <section ref={sectionRef} className="relative min-h-screen py-4 sm:py-8 md:py-16 overflow-hidden" style={{
+  return <section ref={sectionRef} className="relative min-h-screen py-8 sm:py-12 md:py-16 overflow-hidden" style={{
     background: `
         radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
         linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%)
@@ -107,33 +107,33 @@ const StrategicAdvantage = () => {
   }}>
       {/* Dynamic Background Effects */}
       <div ref={containerRef} className="absolute inset-0">
-        {/* Animated Grid - Simplifiée sur mobile */}
-        <div className="absolute inset-0 opacity-10 sm:opacity-20">
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sev-primary/10 to-transparent animate-pulse" style={{
           transform: `translateX(${mousePosition.x * 0.05}px)`
         }} />
           <div style={{
           transform: `translateY(${mousePosition.y * 0.05}px)`
-        }} className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000 bg-black" />
+        }} className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000" />
         </div>
         
-        {/* Floating Orbs - Optimisées mobile */}
-        <div className="absolute top-10 sm:top-20 left-4 sm:left-20 w-48 sm:w-96 h-48 sm:h-96 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 blur-3xl animate-float bg-black" />
-        <div className="absolute top-1/3 right-4 sm:right-1/4 w-40 sm:w-80 h-40 sm:h-80 rounded-full bg-gradient-to-br from-violet-500/20 to-purple-600/20 blur-3xl animate-float delay-1000" />
-        <div className="absolute bottom-1/4 left-4 sm:left-1/3 w-36 sm:w-72 h-36 sm:h-72 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-600/20 blur-3xl animate-float delay-2000" />
-        <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 w-32 sm:w-64 h-32 sm:h-64 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-3xl animate-float delay-3000" />
+        {/* Floating Orbs */}
+        <div className="absolute top-20 left-4 sm:left-20 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 blur-3xl animate-float" />
+        <div className="absolute top-1/3 right-4 sm:right-1/4 w-56 sm:w-80 h-56 sm:h-80 rounded-full bg-gradient-to-br from-violet-500/20 to-purple-600/20 blur-3xl animate-float delay-1000" />
+        <div className="absolute bottom-1/4 left-4 sm:left-1/3 w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-600/20 blur-3xl animate-float delay-2000" />
+        <div className="absolute bottom-20 right-4 sm:right-20 w-40 sm:w-64 h-40 sm:h-64 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-3xl animate-float delay-3000" />
         
-        {/* Data Flow Lines - Cachées sur mobile */}
-        <div className="hidden sm:block absolute inset-0 bg-black">
+        {/* Data Flow Lines */}
+        <div className="hidden sm:block absolute inset-0">
           
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 bg-black">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <div className="relative inline-block mb-6 sm:mb-8 rounded-xl px-4 sm:px-8 md:px-16 lg:px-34 py-4 sm:py-6 md:py-[16px]">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text text-transparent animate-gradient bg-[length:200%_200%] leading-tight px-2 sm:px-4 animate-pulse hover:scale-105 transition-all duration-500 cursor-default">
+          <div className="relative inline-block mb-4 sm:mb-6 md:mb-8 rounded-xl px-2 sm:px-8 md:px-16 lg:px-24 py-2 sm:py-4 md:py-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text text-transparent animate-gradient bg-[length:200%_200%] leading-tight animate-pulse hover:scale-105 transition-all duration-500 cursor-default">
               <span className="inline-block animate-bounce text-yellow-400">Databblead</span>{" "}
               <span className="inline-block" style={{
               animationDelay: '0.1s'
@@ -168,17 +168,17 @@ const StrategicAdvantage = () => {
             </h2>
             
             {/* Underline effect */}
-            <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
+            <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
           </div>
           
-          <div className="relative px-4">
-            <p className="text-lg sm:text-xl md:text-2xl xl:text-4xl mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 font-light lg:text-4xl">L'AI est partout, une data strategique c'est unique 
+          <div className="relative px-2 sm:px-4">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 font-light">Notre data BtoB combinée à l'IA analytique
           </p>
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sev-accent via-sev-primary to-sev-secondary">
-              L'art de transformer la donnée en avantage stratégique
+              L'art de la science des données stratégiques
             </p>
             
-            {/* Decorative elements - Cachés sur très petit écran */}
+            {/* Decorative elements */}
             <div className="hidden sm:block absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-sev-primary/50 animate-pulse" />
             <div className="hidden sm:block absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-sev-secondary/50 animate-pulse delay-1000" />
           </div>
