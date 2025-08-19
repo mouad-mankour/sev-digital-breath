@@ -99,12 +99,7 @@ const StrategicAdvantage = () => {
     gradient: "from-orange-400 to-red-600",
     delay: "600ms"
   }];
-  return <section ref={sectionRef} className="relative min-h-screen py-8 sm:py-12 md:py-16 overflow-hidden" style={{
-    background: `
-        radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-        linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%)
-      `
-  }}>
+  return <section ref={sectionRef} className="relative min-h-screen py-8 sm:py-12 md:py-16 overflow-hidden bg-black">
       {/* Dynamic Background Effects */}
       <div ref={containerRef} className="absolute inset-0">
         {/* Animated Grid */}
