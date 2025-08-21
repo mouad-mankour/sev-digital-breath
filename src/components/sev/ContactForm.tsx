@@ -23,7 +23,8 @@ export function ContactForm() {
     setIsSubmitting(false);
     e.currentTarget.reset();
   };
-  return <section id="contact-form" className="py-16 sm:py-20 md:py-24 relative transition-all duration-300">
+  return (
+    <section id="contact-form" className="py-16 sm:py-20 md:py-24 relative transition-all duration-300">
       {/* Effets visuels de fond */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="bubble absolute top-10 left-4 sm:left-10 w-12 sm:w-20 h-12 sm:h-20 opacity-30" />
@@ -112,5 +113,6 @@ export function ContactForm() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

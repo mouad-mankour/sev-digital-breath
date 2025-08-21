@@ -1,5 +1,6 @@
 export function Footer() {
-  return <footer className="py-12 border-t border-border/30 relative">
+  return (
+    <footer className="py-12 border-t border-border/30 relative">
       {/* Ligne de données subtile */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       
@@ -37,5 +38,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 }

@@ -3,7 +3,8 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/sev-hero-bg.jpg";
 import { scrollToContact } from "@/lib/scroll";
 export function HeroSection() {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Image de fond héroique */}
       <div className="absolute inset-0 opacity-30" style={{
       backgroundImage: `url(${heroBackground})`,
@@ -69,5 +70,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

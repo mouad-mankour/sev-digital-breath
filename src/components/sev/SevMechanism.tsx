@@ -19,7 +19,8 @@ const dataSteps = [{
   color: "hsl(var(--success-green))"
 }];
 export function SevMechanism() {
-  return <section className="py-16 relative">
+  return (
+    <section className="py-16 relative">
       <div className="container mx-auto px-6">
         {/* Titre de section */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
@@ -96,5 +97,6 @@ export function SevMechanism() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
