@@ -73,7 +73,7 @@ const StrategicAdvantage = () => {
   const differentiators = [{
     icon: Database,
     value: `+${counters.companies.toLocaleString()}`,
-    label: "entreprises marocaines",
+    label: "entreprises internationales",
     subtitle: "Base exclusive classifiée",
     gradient: "from-emerald-400 to-teal-600",
     delay: "0ms"
