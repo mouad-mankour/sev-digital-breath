@@ -42,7 +42,7 @@ export function HeroSection() {
 
         {/* Titre principal */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight">
-          <span className="block text-foreground/95">vote DATA BtoB</span>
+          <span className="block text-foreground/95">DATA BtoB</span>
           <span className="block hero-gradient bg-clip-text text-transparent animate-gradient">prêt à la transformer en leads ?</span>
         </h1>
 
