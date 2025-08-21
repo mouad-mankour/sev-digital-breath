@@ -42,7 +42,7 @@ export function ContactForm() {
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight px-4">
               Prêt à transformer
-              <span className="text-accent ml-2 sm:ml-3">notre base BUSINESS en LEADS ?</span>
+              <span className="text-accent ml-2 sm:ml-3">la DATA BUSINESS en LEADS ?</span>
             </h2>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
