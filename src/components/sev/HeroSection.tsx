@@ -3,8 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/sev-hero-bg.jpg";
 import { scrollToContact } from "@/lib/scroll";
 export function HeroSection() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Image de fond héroique */}
       <div className="absolute inset-0 opacity-30" style={{
       backgroundImage: `url(${heroBackground})`,
@@ -44,7 +43,7 @@ export function HeroSection() {
         {/* Titre principal */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight">
           <span className="block text-foreground/95">DATA BtoB</span>
-          <span className="block hero-gradient bg-clip-text text-transparent animate-gradient">prêt à la transformer en leads ?</span>
+          <span className="block hero-gradient bg-clip-text text-transparent animate-gradient">BIG DATA BUSINESS</span>
         </h1>
 
         {/* Sous-titre poétique */}
@@ -70,6 +69,5 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

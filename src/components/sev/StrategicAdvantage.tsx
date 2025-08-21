@@ -73,7 +73,7 @@ const StrategicAdvantage = () => {
   const differentiators = [{
     icon: Database,
     value: `+${counters.companies.toLocaleString()}`,
-    label: "entreprises internationales",
+    label: "entreprises marocaines",
     subtitle: "Base exclusive classifiée",
     gradient: "from-emerald-400 to-teal-600",
     delay: "0ms"
@@ -99,8 +99,7 @@ const StrategicAdvantage = () => {
     gradient: "from-orange-400 to-red-600",
     delay: "600ms"
   }];
-  return (
-    <section ref={sectionRef} className="relative min-h-screen py-8 sm:py-12 md:py-16 overflow-hidden bg-black">
+  return <section ref={sectionRef} className="relative min-h-screen py-8 sm:py-12 md:py-16 overflow-hidden bg-black">
       {/* Dynamic Background Effects */}
       <div ref={containerRef} className="absolute inset-0">
         {/* Animated Grid */}
@@ -163,7 +162,7 @@ const StrategicAdvantage = () => {
             
             
             {/* Decorative elements */}
-            <div className="hidden sm:block absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-sev-primary/50 animate-pulse" />
+            
             <div className="hidden sm:block absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-sev-secondary/50 animate-pulse delay-1000" />
           </div>
         </div>
@@ -174,34 +173,7 @@ const StrategicAdvantage = () => {
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20 md:mb-24">
-          {differentiators.map((item, index) => (
-            <div
-              key={item.label}
-              className={`group transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-              }`}
-              style={{ transitionDelay: item.delay }}
-            >
-              <div className="bg-gradient-to-br from-card/60 to-card/30 backdrop-blur-md border border-primary/20 rounded-2xl p-6 sm:p-8 h-full card-float">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br ${item.gradient} p-3`}>
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className={`text-3xl sm:text-4xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
-                    {item.value}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-foreground leading-tight">
-                    {item.label}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {item.subtitle}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        
 
         {/* CTA */}
         <div className={`text-center px-4 transition-all duration-1500 delay-1200 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}>
@@ -259,7 +231,6 @@ const StrategicAdvantage = () => {
         animationDuration: `${3 + Math.random() * 4}s`
       }} />)}
       </div>
-    </section>
-  );
+    </section>;
 };
 export default StrategicAdvantage;
