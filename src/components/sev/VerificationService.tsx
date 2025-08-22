@@ -4,12 +4,12 @@ import { scrollToContact } from "@/lib/scroll";
 
 export function VerificationService() {
   return (
-    <section className="py-20 bg-black text-white">
+    <section className="py-20 bg-black text-white" aria-labelledby="verification-title" itemScope itemType="https://schema.org/Service">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Shield className="w-8 h-8 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold">Service de Vérification</h2>
+            <h2 id="verification-title" className="text-4xl md:text-5xl font-bold" itemProp="name">Service de Vérification</h2>
           </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Validation multi-niveau de vos données pour garantir une qualité et une conformité optimales

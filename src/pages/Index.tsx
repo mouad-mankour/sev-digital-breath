@@ -11,10 +11,12 @@ import { BusinessStrategy } from "@/components/sev/BusinessStrategy";
 import { UseCases } from "@/components/sev/UseCases";
 import { ContactForm } from "@/components/sev/ContactForm";
 import { Footer } from "@/components/sev/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <JsonLd />
       <HeroSection />
       <SevMechanism />
       <StrategicAdvantage />
