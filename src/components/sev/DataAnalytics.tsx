@@ -2,13 +2,12 @@ import { BarChart3, Brain, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToContact } from "@/lib/scroll";
 export function DataAnalytics() {
-  return (
-    <section className="py-20 bg-black text-white">
+  return <section className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <BarChart3 className="w-8 h-8 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold">Data Analytics</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">Service de data Analytics</h2>
           </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Transformez vos données en insights stratégiques avec notre plateforme d'analyse avancée
@@ -42,15 +41,10 @@ export function DataAnalytics() {
         </div>
 
         <div className="text-center">
-          <Button 
-            onClick={scrollToContact}
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg text-lg font-semibold"
-          >
+          <Button onClick={scrollToContact} size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg text-lg font-semibold">
             Découvrir nos solutions data
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

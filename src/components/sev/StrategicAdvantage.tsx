@@ -107,9 +107,7 @@ const StrategicAdvantage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sev-primary/10 to-transparent animate-pulse" style={{
           transform: `translateX(${mousePosition.x * 0.05}px)`
         }} />
-          <div style={{
-          transform: `translateY(${mousePosition.y * 0.05}px)`
-        }} className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000" />
+          
         </div>
         
         {/* Floating Orbs */}
@@ -119,42 +117,13 @@ const StrategicAdvantage = () => {
         <div className="absolute bottom-20 right-4 sm:right-20 w-40 sm:w-64 h-40 sm:h-64 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-3xl animate-float delay-3000" />
         
         {/* Data Flow Lines */}
-        <div className="hidden sm:block absolute inset-0">
-          
-        </div>
+        
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <div className="relative inline-block mb-4 sm:mb-6 md:mb-8 rounded-xl px-2 sm:px-8 md:px-16 lg:px-24 py-2 sm:py-4 md:py-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text text-transparent animate-gradient bg-[length:200%_200%] leading-tight animate-pulse hover:scale-105 transition-all duration-500 cursor-default mx-0 my-0 px-0 py-0">
-              <span className="inline-block animate-bounce text-yellow-400 px-[57px] my-[26px] py-0 mx-[72px] text-center font-extrabold text-8xl">Databblead</span>{" "}
-              {" "}
-              {" "}
-              {" "}
-              {" "}
-              <span className="inline-block" style={{
-              animationDelay: '0.5s'
-            }}>base</span>{" "}
-              {" "}
-              <span style={{
-              animationDelay: '0.7s'
-            }} className="inline-block text-slate-50">vos</span>{" "}
-              <span style={{
-              animationDelay: '0.8s'
-            }} className="inline-block animate-bounce text-yellow-400">Prospects</span>{" "}
-              <span style={{
-              animationDelay: '0.9s'
-            }} className="inline-block text-slate-50">,</span>{" "}
-              <span style={{
-              animationDelay: '1s'
-            }} className="inline-block animate-bounce text-orange-500">extraits, enrichis et vérifiés.</span>
-            </h2>
-            
-            {/* Underline effect */}
-            <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
-          </div>
+          
           
           <div className="relative px-2 sm:px-4">
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 font-light">L'AI est partout, une data stratégique c'est unique
@@ -219,7 +188,7 @@ const StrategicAdvantage = () => {
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full">
         <div className="h-px bg-gradient-to-r from-transparent via-sev-primary/50 to-transparent" />
-        <div className="h-4 bg-gradient-to-t from-sev-primary/10 to-transparent bg-black" />
+        
       </div>
       
       {/* Floating data points */}
