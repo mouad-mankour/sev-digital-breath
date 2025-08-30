@@ -3,14 +3,14 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/sev-hero-bg.jpg";
 import { scrollToContact } from "@/lib/scroll";
 export function HeroSection() {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <main className="relative min-h-screen flex items-center justify-center overflow-hidden" role="main" aria-label="Accueil databblead - Intelligence Data et Génération de Leads">
       {/* Image de fond héroique */}
       <div className="absolute inset-0 opacity-30" style={{
       backgroundImage: `url(${heroBackground})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
-    }} />
+    }} aria-label="Fond abstrait représentant l'intelligence artificielle et les données" />
       
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
@@ -42,8 +42,8 @@ export function HeroSection() {
 
         {/* Titre principal */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight">
-          <span className="block text-foreground/95">La plus grande Base de donnée BUSSINESS au Maroc</span>
-          <span className="block hero-gradient bg-clip-text text-transparent animate-gradient">prêt à la transformer en leads ?</span>
+          <span className="block text-foreground/95">DE la DATA brute </span>
+          <span className="block hero-gradient bg-clip-text text-transparent animate-gradient">aux LEADS qualifiés</span>
         </h1>
 
         {/* Sous-titre poétique */}
@@ -56,7 +56,7 @@ export function HeroSection() {
 
         {/* CTA principal */}
         <div className="flex justify-center px-4">
-          <Button variant="hero" size="lg" className="group text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-6 h-auto shadow-2xl hover:scale-105 transition-all duration-200 w-full sm:w-auto max-w-sm sm:max-w-none" onClick={scrollToContact} data-cta="hero_launch_strategy" aria-label="Lancer ma stratégie databblead - Aller au formulaire de contact">
+          <Button variant="hero" size="lg" className="group text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-6 h-auto shadow-2xl hover:scale-105 transition-all duration-200 w-full sm:w-auto max-w-sm sm:max-w-none" onClick={scrollToContact} data-cta="hero_launch_strategy" aria-label="Lancer ma stratégie databblead - Découvrir nos services d'intelligence data">
             Lancer ma stratégie databblead
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-all duration-300" />
           </Button>
@@ -69,5 +69,5 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </section>;
+    </main>;
 }

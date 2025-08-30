@@ -67,7 +67,11 @@ export default {
 				'data-stream': 'hsl(var(--data-stream))',
 				'neural-purple': 'hsl(var(--neural-purple))',
 				'warm-gold': 'hsl(var(--warm-gold))',
-				'success-green': 'hsl(var(--success-green))'
+				'success-green': 'hsl(var(--success-green))',
+				// SEV brand colors
+				'sev-primary': 'hsl(var(--sev-primary))',
+				'sev-secondary': 'hsl(var(--sev-secondary))',
+				'sev-accent': 'hsl(var(--sev-accent))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -23,7 +23,8 @@ export function ContactForm() {
     setIsSubmitting(false);
     e.currentTarget.reset();
   };
-  return <section id="contact-form" className="py-16 sm:py-20 md:py-24 relative transition-all duration-300">
+  return (
+    <section id="contact-form" className="py-16 sm:py-20 md:py-24 relative transition-all duration-300" aria-labelledby="contact-title" itemScope itemType="https://schema.org/ContactPage">
       {/* Effets visuels de fond */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="bubble absolute top-10 left-4 sm:left-10 w-12 sm:w-20 h-12 sm:h-20 opacity-30" />
@@ -40,9 +41,9 @@ export function ContactForm() {
               <span className="text-accent text-xs sm:text-sm font-semibold tracking-wide">Prêt à transformer vos données ?</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight px-4">
+            <h2 id="contact-title" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight px-4" itemProp="name">
               Prêt à transformer
-              <span className="text-accent ml-2 sm:ml-3">notre base BUSINESS en LEAD ?</span>
+              <span className="text-accent ml-2 sm:ml-3">la DATA BUSINESS en LEADS ?</span>
             </h2>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
@@ -112,5 +113,6 @@ export function ContactForm() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

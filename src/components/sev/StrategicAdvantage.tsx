@@ -99,140 +99,50 @@ const StrategicAdvantage = () => {
     gradient: "from-orange-400 to-red-600",
     delay: "600ms"
   }];
-  return <section ref={sectionRef} className="relative min-h-screen py-16 sm:py-24 md:py-32 overflow-hidden" style={{
-    background: `
-          radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-          linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%)
-        `
-  }}>
+  return <section ref={sectionRef} className="relative min-h-screen py-8 sm:py-12 md:py-16 overflow-hidden bg-black">
       {/* Dynamic Background Effects */}
       <div ref={containerRef} className="absolute inset-0">
-        {/* Animated Grid - Simplifiée sur mobile */}
-        <div className="absolute inset-0 opacity-10 sm:opacity-20">
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sev-primary/10 to-transparent animate-pulse" style={{
           transform: `translateX(${mousePosition.x * 0.05}px)`
         }} />
-          <div style={{
-          transform: `translateY(${mousePosition.y * 0.05}px)`
-        }} className="absolute inset-0 bg-gradient-to-b from-transparent via-sev-secondary/10 to-transparent animate-pulse delay-1000 bg-black" />
-        </div>
-        
-        {/* Floating Orbs - Optimisées mobile */}
-        <div className="absolute top-10 sm:top-20 left-4 sm:left-20 w-48 sm:w-96 h-48 sm:h-96 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 blur-3xl animate-float bg-black" />
-        <div className="absolute top-1/3 right-4 sm:right-1/4 w-40 sm:w-80 h-40 sm:h-80 rounded-full bg-gradient-to-br from-violet-500/20 to-purple-600/20 blur-3xl animate-float delay-1000" />
-        <div className="absolute bottom-1/4 left-4 sm:left-1/3 w-36 sm:w-72 h-36 sm:h-72 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-600/20 blur-3xl animate-float delay-2000" />
-        <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 w-32 sm:w-64 h-32 sm:h-64 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-3xl animate-float delay-3000" />
-        
-        {/* Data Flow Lines - Cachées sur mobile */}
-        <div className="hidden sm:block absolute inset-0 bg-black">
           
         </div>
+        
+        {/* Floating Orbs */}
+        <div className="absolute top-20 left-4 sm:left-20 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 blur-3xl animate-float" />
+        <div className="absolute top-1/3 right-4 sm:right-1/4 w-56 sm:w-80 h-56 sm:h-80 rounded-full bg-gradient-to-br from-violet-500/20 to-purple-600/20 blur-3xl animate-float delay-1000" />
+        <div className="absolute bottom-1/4 left-4 sm:left-1/3 w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-600/20 blur-3xl animate-float delay-2000" />
+        <div className="absolute bottom-20 right-4 sm:right-20 w-40 sm:w-64 h-40 sm:h-64 rounded-full bg-gradient-to-br from-orange-500/20 to-red-600/20 blur-3xl animate-float delay-3000" />
+        
+        {/* Data Flow Lines */}
+        
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 bg-black">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <div className="relative inline-block mb-6 sm:mb-8 rounded-xl px-4 sm:px-8 md:px-16 lg:px-34 py-4 sm:py-6 md:py-[16px]">
-            <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-5xl 2xl:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-sev-accent via-sev-primary to-white bg-clip-text animate-gradient bg-[length:200%_200%] leading-tight text-amber-400 px-2 sm:px-4 lg:text-7xl">Databblead détient la plus grande base de donnée BUSINESS du Maroc</h2>
-            
-            {/* Underline effect */}
-            <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-sev-primary to-transparent animate-pulse" />
-          </div>
+        <div className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           
-          <div className="relative px-4">
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">L'ai est désormais partout , une data stratégique c'est unique</p>
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sev-accent via-sev-primary to-sev-secondary">
-              L'art de transformer la donnée en avantage stratégique
-            </p>
+          
+          <div className="relative px-2 sm:px-4">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 font-light">L'AI est partout, une data stratégique c'est unique
+          </p>
             
-            {/* Decorative elements - Cachés sur très petit écran */}
-            <div className="hidden sm:block absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-sev-primary/50 animate-pulse" />
+            
+            {/* Decorative elements */}
+            
             <div className="hidden sm:block absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-sev-secondary/50 animate-pulse delay-1000" />
           </div>
         </div>
 
         {/* Narrative Text */}
         <div className={`max-w-6xl mx-auto text-center mb-16 sm:mb-20 md:mb-24 transition-all duration-1500 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-          <div className="relative p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/20 shadow-2xl mx-4">
-            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-sev-primary/10 to-sev-secondary/10 animate-pulse" />
-            
-            <div className="relative z-10 space-y-4 sm:space-y-6 md:space-y-8">
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed">
-                <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-600/20 text-white font-bold text-lg sm:text-xl md:text-2xl border border-emerald-400/30 lg:text-xl">👉 Vos marchés cartographiés.      
-👉Vos prospects identifiés.          
- 👉Vos opportunités qualifiées. </span>
-              </p>
-              
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed">
-                Plus de <span className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-600">250 000</span> entreprises actives dans tous les secteurs.
-              </p>
-              
-              <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200">
-                <span className="text-center">Ce patrimoine exclusif, enrichi avec les contacts décisionnaires clés de votre choix...</span>
-                <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-600/20 text-violet-300 font-bold border border-violet-400/30 text-center">intelligence économique stratégique ° Maroc </span>
-              </div>
-              
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">Résultat</span>
-                <span className="text-gray-200"> : des pipelines sur mesure qui transforment vos ambitions en </span>
-                <span className="bg-clip-text bg-gradient-to-r from-sev-accent to-sev-primary text-green-400">résultats tangibles</span>
-              </div>
-            </div>
-            
-            {/* Corner decorations - Cachées sur mobile */}
-            <div className="hidden sm:block absolute top-4 left-4 w-12 h-12 border-l-2 border-t-2 border-sev-primary/50 rounded-tl-lg" />
-            <div className="hidden sm:block absolute top-4 right-4 w-12 h-12 border-r-2 border-t-2 border-sev-secondary/50 rounded-tr-lg" />
-            <div className="hidden sm:block absolute bottom-4 left-4 w-12 h-12 border-l-2 border-b-2 border-sev-accent/50 rounded-bl-lg" />
-            <div className="hidden sm:block absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-sev-primary/50 rounded-br-lg" />
-          </div>
+          
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 md:mb-20 px-4">
-          {differentiators.map((item, index) => <div key={index} className={`group relative text-center p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl backdrop-blur-xl border transition-all duration-700 hover:transform hover:scale-105 sm:hover:scale-110 hover:rotate-1 ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 rotate-3'}`} style={{
-          transitionDelay: isVisible ? item.delay : '0ms',
-          background: `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)`,
-          borderColor: `rgba(255,255,255,0.2)`
-        }}>
-              {/* Animated background */}
-              <div className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-              
-              {/* Icon container */}
-              <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center relative">
-                <div className={`relative p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.gradient} shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110`}>
-                  <item.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white drop-shadow-lg" />
-                  
-                  {/* Pulsing ring */}
-                  <div className={`absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.gradient} animate-ping opacity-20`} />
-                </div>
-              </div>
-              
-              {/* Counter */}
-              <div className="mb-3 sm:mb-4 md:mb-6">
-                <div className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-1 sm:mb-2 text-transparent bg-clip-text bg-gradient-to-r ${item.gradient}`}>
-                  {item.value}
-                </div>
-                <div className="text-xs sm:text-sm uppercase tracking-wider text-gray-400 font-semibold">
-                  {item.subtitle}
-                </div>
-              </div>
-              
-              {/* Label */}
-              <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed font-medium group-hover:text-white transition-colors duration-300 px-2">
-                {item.label}
-              </p>
-              
-              {/* Progress bar */}
-              <div className="mt-4 sm:mt-6 w-full bg-white/10 rounded-full h-1 sm:h-2 overflow-hidden">
-                <div className={`h-full bg-gradient-to-r ${item.gradient} rounded-full transition-all duration-1000 delay-1000 ${isVisible ? 'w-full' : 'w-0'}`} style={{
-              transitionDelay: `${1000 + index * 200}ms`
-            }} />
-              </div>
-              
-              {/* Corner accent */}
-              <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gradient-to-br ${item.gradient} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
-            </div>)}
-        </div>
+        
 
         {/* CTA */}
         <div className={`text-center px-4 transition-all duration-1500 delay-1200 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}>
@@ -278,7 +188,7 @@ const StrategicAdvantage = () => {
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full">
         <div className="h-px bg-gradient-to-r from-transparent via-sev-primary/50 to-transparent" />
-        <div className="h-4 bg-gradient-to-t from-sev-primary/10 to-transparent bg-black" />
+        
       </div>
       
       {/* Floating data points */}

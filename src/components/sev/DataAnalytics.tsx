@@ -1,103 +1,50 @@
 import { BarChart3, Brain, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToContact } from "@/lib/scroll";
-
 export function DataAnalytics() {
-  return (
-    <section className="py-16 sm:py-20 md:py-24 relative bg-gradient-to-b from-muted/20 to-background">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="hidden sm:block absolute top-1/3 left-0 w-full h-1 data-flow" style={{ animationDelay: '1s' }} />
-        <div className="hidden sm:block absolute bottom-1/3 right-0 w-full h-1 data-flow" style={{ animationDelay: '3s' }} />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="flex justify-center mb-6 sm:mb-8">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-success-green/20 to-primary/20 flex items-center justify-center shadow-xl">
-                <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 text-success-green" />
-              </div>
-            </div>
-            
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-              Data
-              <span className="text-success-green ml-2 sm:ml-3">Analytics</span>
-            </h2>
-            
-            <p className="text-lg sm:text-xl md:text-2xl font-light text-foreground/90 mb-3 sm:mb-4 leading-relaxed px-4">
-              Transformez vos données en décisions stratégiques
-            </p>
-            
-            <div className="w-16 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-success-green to-primary rounded-full mx-auto shadow-lg" />
+  return <section className="py-20 bg-black text-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <BarChart3 className="w-8 h-8 text-primary" />
+            <h2 className="text-4xl md:text-5xl font-bold">Service de data Analytics</h2>
           </div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Transformez vos données en insights stratégiques avec notre plateforme d'analyse avancée
+          </p>
+        </div>
 
-          {/* Content Grid */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Description */}
-            <div className="space-y-8">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Nous analysons vos données pour révéler les tendances, opportunités et risques invisibles. 
-                <span className="text-success-green font-semibold"> Rapports clairs, indicateurs clés, recommandations actionnables</span> 
-                — pour piloter votre croissance avec précision.
-              </p>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-success-green mb-2">12x</div>
-                  <div className="text-sm text-muted-foreground">ROI décisions data</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">48h</div>
-                  <div className="text-sm text-muted-foreground">Délai insights</div>
-                </div>
-              </div>
-
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="w-full md:w-auto px-8 py-4 text-lg hover:scale-105 transition-all duration-200"
-                onClick={scrollToContact}
-                data-cta="service_data_analytics"
-                aria-label="Obtenir mon audit data - Aller au formulaire de contact"
-              >
-                Obtenir mon audit data
-              </Button>
-            </div>
-
-            {/* Visual representation */}
-            <div className="relative">
-              <div className="card-float bg-gradient-to-br from-card to-card/50 border border-success-green/20 rounded-3xl p-8 shadow-xl backdrop-blur-sm">
-                <div className="space-y-6">
-                  {[
-                    { icon: Brain, label: "Intelligence prédictive", color: "hsl(var(--success-green))" },
-                    { icon: BarChart3, label: "Visualisation avancée", color: "hsl(var(--primary))" },
-                    { icon: TrendingUp, label: "Recommandations ROI", color: "hsl(var(--accent))" }
-                  ].map((item, index) => (
-                    <div 
-                      key={item.label}
-                      className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-muted/30 to-background/30 border border-border/50"
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    >
-                      <div 
-                        className="w-12 h-12 rounded-xl flex items-center justify-center"
-                        style={{ 
-                          backgroundColor: `${item.color}20`,
-                          border: `1px solid ${item.color}40`
-                        }}
-                      >
-                        <item.icon className="w-6 h-6" style={{ color: item.color }} />
-                      </div>
-                      <span className="font-medium text-foreground">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="bg-gray-900 p-8 rounded-lg border border-gray-800">
+            <Brain className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-2xl font-bold mb-4">IA Prédictive</h3>
+            <p className="text-gray-300">
+              Algorithmes d'intelligence artificielle pour prédire les tendances du marché
+            </p>
+          </div>
+          
+          <div className="bg-gray-900 p-8 rounded-lg border border-gray-800">
+            <BarChart3 className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-2xl font-bold mb-4">Analyse Comportementale</h3>
+            <p className="text-gray-300">
+              Comprenez les patterns de vos prospects et optimisez votre approche
+            </p>
+          </div>
+          
+          <div className="bg-gray-900 p-8 rounded-lg border border-gray-800">
+            <TrendingUp className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-2xl font-bold mb-4">ROI Optimisé</h3>
+            <p className="text-gray-300">
+              Maximisez votre retour sur investissement avec des insights précis
+            </p>
           </div>
         </div>
+
+        <div className="text-center">
+          <Button onClick={scrollToContact} size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg text-lg font-semibold">
+            Découvrir nos solutions data
+          </Button>
+        </div>
       </div>
-    </section>
-  );
+    </section>;
 }
